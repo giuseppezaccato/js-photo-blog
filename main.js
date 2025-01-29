@@ -1,11 +1,14 @@
 //task individuo elemento in pagina
 const container = document.querySelector('.row');
-
 //task chiamata all'API
 axios.get('https://lanciweb.github.io/demo/api/pictures/')
 
     .then(response => {
-        console.log(response.data.id)
+        console.log(response.data);
+
+        //  task eventuale destructuring
+        // let [{ title }, { url }, { date }] = response.data
+        // console.log(title, url, date)
 
         //task ciclo l'array per recuperare i dati usando una sola chiamata!
         response.data.forEach(element => {
@@ -29,7 +32,17 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         `
         });
 
+
     })
     .catch(error => {
         console.error(error)
     })
+
+//fix tentativo MODALE BONUS
+// const openModal = document.querySelectorAll('figure');
+// const closeModal = document.getElementById('closeModal');
+
+// console.log(openModal, closeModal);
+
+
+
