@@ -40,3 +40,10 @@ header {
     width: 75%;
     margin: 0 auto;
 }
+
+
+/*task piccolo bonus */
+.card:hover {
+    transform: rotate(10deg);
+    transition: all 1s ease-out;
+}
