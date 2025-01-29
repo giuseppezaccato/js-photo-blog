@@ -20,20 +20,43 @@
 
 <body>
     <!-- divido body in un header con vh20 e un main con vh80 -->
-    <header class="d-flex align-items-center  justify-content-center">
-        <h1 class="titolo"> Estate '24 </h1>
+    <header class="d-flex justify-content-center align-items-center">
+        <h1 class="titolo text-center"> Estate '24 </h1>
     </header>
-    <main class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <div class="container">
 
-            <div class="card">
-
-
-
+    <div class="container">
+        <main class="row row-cols-md-2 row-cols-lg-3">
+            <div>
+                <div class=" card p-2 mt-5 ">
+                    <figure class="position-relative">
+                        <img src="./img/wall.png" width="100%" class="card-img-top p-3" alt="${element.title}">
+                        <img src="./img/pin.svg" class="position-absolute top-0 start-50 translate-middle" alt="pin">
+                    </figure>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item para">${element.date}</li>
+                            <li class="list-group-item para1 ">${element.title}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class=" card p-2 mt-5 ">
+                    <figure class="position-relative">
+                        <img src="./img/wall.png" width="100%" class="card-img-top p-3" alt="${element.title}">
+                        <img src="./img/pin.svg" class="position-absolute top-0 start-50 translate-middle" alt="pin">
+                    </figure>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item para">${element.date}</li>
+                            <li class="list-group-item para1 ">${element.title}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
+    </div>
 
-        </div>
     </main>
 
 

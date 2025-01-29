@@ -1,34 +1,42 @@
 /* fonts "Sometype Mono" & "Edu Tas Beginner" */
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* fonts!
-font-family: "Edu TAS Beginner",
-sans-serif;
-font-family: "Sometype Mono",
-"monospace"; */
 
 body {
-    max-width: 100%;
+    width: 100%;
+    background-image: url(../img/cork.png);
+    background-size: contain;
+
 }
 
 header {
     background-image: url(../img/wall.png);
     background-size: contain;
     height: 20vh;
-    font-size: 300px;
-    font-family: "Edu TAS Beginner", sans-serif;
-    text-transform: uppercase;
-}
-
-main {
-    background-image: url(../img/cork.png);
-    background-size: contain;
-    height: 80vh;
 }
 
 .titolo {
-    font-size: 6rem;
-    font-weight: 800;
+    font-size: 4rem;
+    font-weight: 700;
     font-family: "Edu TAS Beginner", sans-serif;
     text-transform: uppercase;
+}
+
+.para {
+    font-family: "Edu TAS Beginner", sans-serif;
+    color: grey;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.para1 {
+    font-family: "Sometype Mono", "monospace";
+    font-style: italic;
+    font-size: large;
+
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
 }
