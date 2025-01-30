@@ -3,12 +3,12 @@
 
 body {
     width: 100%;
-    background-image: url(../img/cork.png);
+    background-image: url('../img/cork.png');
     background-size: contain;
 }
 
 header {
-    background-image: url(../img/wall.png);
+    background-image: url('../img/wall.png');
     background-size: contain;
     height: 20vh;
 }
@@ -57,9 +57,27 @@ header {
 }
 
 
-/*fix .modale {
-    z-index: 1;
-    overflow: auto;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-} */
+.modale {
+    /* z-index: 2;
+    overflow: auto; */
+    /* opacity: 0; */
+    /* transition: opacity 0.5s ease-in-out; */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto; */
+    /* top: 0; */
+    z-index: 2;
+}
+
+.modalcontainer {
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+
+
+
+
+
+}
