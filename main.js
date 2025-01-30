@@ -14,7 +14,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         console.log(response.data);
 
         //  task eventuale destructuring
-        //* questa vosa va fatta DENTRO ciclo, 
+        //* questa osa va fatta DENTRO ciclo, 
         //* cioè una volta selezionato l'elemento per destrutturarlo!
         // let [{ title }, { url }, { date }] = response.data
         // console.log(title, url, date)
@@ -36,8 +36,8 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                     </figure>
                     <div class="card-body">
                         <ul class="list-group list-group-flush ">
-                                <li class="list-group-item para">${element.date}</li>
-                                <li class="list-group-item para1 text-uppercase ">${element.title}</li>
+                                <li class="list-group-item para1">${element.date}</li>
+                                <li class="list-group-item para text-uppercase ">${element.title}</li>
                         </ul>
                     </div>
                 </div>
@@ -49,11 +49,23 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         //task richiamo la variabile array come da righe 4/6
         cards = document.querySelectorAll('.card');
 
+        //*  logica funzionamento MODALE
         //task  il foreach sull'array di info creato dal queryselectoAll va fatto qui!!!
+        // forEach per ciclare sull'array cards che al click l'eventlistener deve ritornare l'immagine cliccata selezionando dall'elemento "card" solo l'attributo ID
         cards.forEach(element => {
             element.addEventListener('click', function () {
-                document.getElementById('myModal').innerHTML = `<img src="https://marcolanci.it/boolean/assets/pictures/${element.getAttribute("data-opplà")}.png" width="450px" alt="" > `;
-                document.getElementById('myModal').classList.remove('d-none');
+                const Modal = document.getElementById('Modal');
+                Modal.innerHTML = `
+                    <img src="https://marcolanci.it/boolean/assets/pictures/${element.getAttribute("data-opplà")}.png" class="rounded" width="450px" alt="" >
+                    <button id="closeModal" class="btn btn-warning">Chiudi</button>
+                `;
+                Modal.classList.replace('d-none', 'modale');
+
+                //task l'eventlistener qui per ragioni di scope, altrimenti non vedrei il bottone generato col l'inner
+                const closeModal = document.getElementById('closeModal');
+                closeModal.addEventListener('click', function () {
+                    Modal.classList.replace('modale', 'd-none');
+                })
             })
 
         });
@@ -62,10 +74,6 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     .catch(error => {
         console.error(error)
     })
-
-//fix tentativo MODALE BONUS
-const openModal = document.querySelectorAll('figure');
-// const closeModal = document.getElementById('closeModal');
 
 
 // console.log(openModal, closeModal);
