@@ -21,7 +21,6 @@ header {
     color: #D85448;
 }
 
-
 .para {
     font-family: "Edu TAS Beginner", sans-serif;
     color: #D85448;
@@ -42,6 +41,48 @@ header {
     margin: 0 auto;
 }
 
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: yellow;
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Sometype Mono", "monospace";
+
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ff1500;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms
+}
+
+button:hover {
+    color: #e8e8e8;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
 /*task piccolo bonus */
 .card:hover {
     transform: rotate(10deg);
@@ -50,8 +91,8 @@ header {
     z-index: 1;
     scale: 1.1;
     transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
-    box-shadow: 20px 20px 20px rgba(216, 84, 72, 0.8);
-    box-shadow: 2px 2px 20px#D85448, -2px -2px 20px rgb(255, 251, 0);
+    /* box-shadow: 20px 20px 20px rgba(216, 84, 72, 0.8); */
+    box-shadow: 2px 2px 20px#ff1500, -2px -2px 20px rgb(255, 250, 0);
 }
 
 /*task scoparsa del pin all'hover della card*/
@@ -61,8 +102,8 @@ header {
 
 .modale {
     display: flex;
+    gap: 0.5rem;
     justify-content: center;
-    gap: 1rem;
     align-items: center;
     flex-direction: column;
     position: fixed;

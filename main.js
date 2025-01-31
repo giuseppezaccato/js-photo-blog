@@ -43,25 +43,24 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                 </div>
             </div>
         `
-
         });
 
         //task richiamo la variabile array come da righe 4/6
         cards = document.querySelectorAll('.card');
 
-        //*  logica funzionamento MODALE
-        //task  il foreach sull'array di info creato dal queryselectoAll va fatto qui!!!
-        // forEach per ciclare sull'array cards che al click l'eventlistener deve ritornare l'immagine cliccata selezionando dall'elemento "card" solo l'attributo ID
+        //task logica funzionamento MODALE
+        //*  il foreach sull'array di info creato dal queryselectoAll va fatto qui!!!
+        //* forEach per ciclare sull'array cards che al click l'eventlistener deve ritornare l'immagine cliccata selezionando dall'elemento "card" solo l'attributo ID
         cards.forEach(element => {
             element.addEventListener('click', function () {
                 const Modal = document.getElementById('Modal');
                 Modal.innerHTML = `
-                    <img src="https://marcolanci.it/boolean/assets/pictures/${element.getAttribute("data-opplà")}.png" class="rounded" width="450px" alt="" >
-                    <button id="closeModal" class="btn btn-warning">Chiudi</button>
-                `;
+                    <img src="https://marcolanci.it/boolean/assets/pictures/${element.getAttribute("data-opplà")}.png" class="rounded border border-warning" width="450px" alt="" >
+                    <button id="closeModal">Chiudi</button>
+                    `;
                 Modal.classList.replace('d-none', 'modale');
 
-                //task l'eventlistener qui per ragioni di scope, altrimenti non vedrei il bottone generato col l'inner
+                //* l'eventlistener qui per ragioni di scope, altrimenti non vedrei il bottone generato col l'inner
                 const closeModal = document.getElementById('closeModal');
                 closeModal.addEventListener('click', function () {
                     Modal.classList.replace('modale', 'd-none');
@@ -69,15 +68,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             })
 
         });
-
     })
     .catch(error => {
         console.error(error)
     })
-
-
-// console.log(openModal, closeModal);
-
-
-
-
