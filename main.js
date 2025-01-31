@@ -53,17 +53,17 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         //* forEach per ciclare sull'array cards che al click l'eventlistener deve ritornare l'immagine cliccata selezionando dall'elemento "card" solo l'attributo ID
         cards.forEach(element => {
             element.addEventListener('click', function () {
-                const Modal = document.getElementById('Modal');
-                Modal.innerHTML = `
+                const modal = document.getElementById('Modal');
+                modal.innerHTML = `
                     <img src="https://marcolanci.it/boolean/assets/pictures/${element.getAttribute("data-opplà")}.png" class="rounded border border-warning" width="450px" alt="" >
                     <button id="closeModal">Chiudi</button>
                     `;
-                Modal.classList.replace('d-none', 'modale');
+                modal.classList.replace('d-none', 'modale');
 
                 //* l'eventlistener qui per ragioni di scope, altrimenti non vedrei il bottone generato col l'inner
                 const closeModal = document.getElementById('closeModal');
                 closeModal.addEventListener('click', function () {
-                    Modal.classList.replace('modale', 'd-none');
+                    modal.classList.replace('modale', 'd-none');
                 })
             })
 
